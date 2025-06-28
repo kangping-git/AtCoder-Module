@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import List, Tuple, Optional, Callable, Iterable
+import heapq
+import math
+import bisect
+
 class LazySegMinAdd:
     """Segment tree supporting range add and range minimum query."""
 

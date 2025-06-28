@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import List, Tuple, Optional, Callable, Iterable
+import heapq
+import math
+import bisect
+
 def kosaraju_scc(n: int, edges: List[Tuple[int, int]]) -> List[List[int]]:
     g = [[] for _ in range(n)]
     rg = [[] for _ in range(n)]

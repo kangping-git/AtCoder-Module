@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import List, Tuple, Optional, Callable, Iterable
+import heapq
+import math
+import bisect
+
 INF = 10 ** 18
 
 def dijkstra(n: int, adj: List[List[Tuple[int, int]]], src: int) -> List[int]:

@@ -1,3 +1,9 @@
+from __future__ import annotations
+from typing import List, Tuple, Optional, Callable, Iterable
+import heapq
+import math
+import bisect
+
 class LCA:
     def __init__(self, n: int, root: int, adj: List[List[int]]):
         self.LOG = (n).bit_length()
