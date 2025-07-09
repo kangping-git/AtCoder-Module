@@ -3,6 +3,7 @@ from typing import List, Tuple, Optional, Callable, Iterable
 import heapq
 import math
 import bisect
+
 class UnionFind:
     __slots__ = ("_parent", "_rank", "_size")
 
@@ -36,3 +37,17 @@ class UnionFind:
 
     def size(self, x: int) -> int:
         return self._size[self.find(x)]
+
+    def groups(self) -> List[List[int]]:
+        """
+        全要素を根ごとにまとめたリストを返します。
+        例: [[0, 3, 5], [1, 2, 4]] のように、各グループが個別のリストになります。
+        """
+        # root -> members
+        root_members: dict[int, List[int]] = {}
+        for i in range(len(self._parent)):
+            r = self.find(i)
+            if r not in root_members:
+                root_members[r] = []
+            root_members[r].append(i)
+        return list(root_members.values())
