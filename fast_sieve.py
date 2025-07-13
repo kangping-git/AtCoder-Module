@@ -15,7 +15,7 @@ def fast_sieve(n: int) -> list[int]:
     sieve = bytearray(b'\1') * size
     sieve[0] = 0  # 1 は素数扱いしない
 
-    limit = int(n**0.5)
+    limit = math.isqrt(n)
     # i は「値 2*i+1 が候補」のインデックス
     for i in range(1, (limit >> 1) + 1):
         if sieve[i]:
